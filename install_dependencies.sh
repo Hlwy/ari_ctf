@@ -41,13 +41,15 @@ echo
 read -n1 -p "Do you need to clone the repo dependencies? Enter (y) or (n)" doit
 echo
 if [[ $doit == "Y" || $doit == "y" ]]; then
-
+     git clone https://github.com/erlerobot/ardupilot -b gazebo
      git clone https://github.com/ethz-asl/glog_catkin.git
      git clone https://github.com/catkin/catkin_simple.git
      git clone https://github.com/erlerobot/rotors_simulator.git
      git clone https://github.com/Hlwy/ardupilot_sitl_gazebo_plugin.git
      git clone https://github.com/erlerobot/mavros.git
      git clone https://github.com/PX4/mav_comm.git
+
+     cp glog_catkin/fix-unused-typedef-warning.patch ../
 
      # cd /opt/ros/kinetic/lib/mavros/
      # sudo ./install_geographiclib_dataset.sh
@@ -95,3 +97,7 @@ echo
 
 echo
 echo Done!
+echo
+echo
+echo Before running 'catkin_make' You will need to run the following to successfully build Ardupilot packages:
+echo "     catkin_make --pkg mav_msgs mavros_msgs"
