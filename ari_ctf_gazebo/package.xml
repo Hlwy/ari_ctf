@@ -1,0 +1,28 @@
+<package>
+  <name>ari_ctf_gazebo</name>
+  <version>1.0.0</version>
+  <description>Collection of all the necessary ROS packages, with minor changes, for successfully simulating Erle-Copter drone in Gazebo</description>
+
+  <maintainer email="hunter.lw.young@gmail.com">Hunter Young</maintainer>
+
+  <author>Hunter Young</author>
+
+  <license>ASL 2.0</license>
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>mav_comm</run_depend>
+  <run_depend>mavros</run_depend>
+  <run_depend>hector_gazebo</run_depend>
+  <run_depend>ardupilot</run_depend>
+  <run_depend>rotors_simulator</run_depend>
+  <run_depend>glog_catkin</run_depend>
+  <run_depend>catkin_simple</run_depend>
+  <run_depend>ardupilot_sitl_gazebo_plugin</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
