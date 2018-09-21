@@ -4,13 +4,19 @@
 #################################
 #     Additional Packages
 ################################
-read -n1 -p "Do you need to install the additional ROS packages? Enter (y) or (n)" doit
+read -n1 -p "Do you need to install the additional ROS Dependencies? Enter (y) or (n)" doit
 echo
 if [[ $doit == "Y" || $doit == "y" ]]; then
      # Joystick drivers for robot control
      sudo apt install ros-kinetic-joy ros-kinetic-joystick-drivers ros-kinetic-joy-teleop ros-kinetic-teleop-twist-joy
      # Drivers for robot navigation
      sudo apt install ros-kinetic-gmapping ros-kinetic-amcl ros-kinetic-move-base ros-kinetic-map-server ros-kinetic-hector-gazebo*
+
+	# ErleCopter packages
+	sudo apt install ros-kinetic-mavros ros-kinetic-mavros-msgs ros-kinetic-mav-msgs ros-kinetic-mavlink
+	sudo apt install ros-kinetic-octomap-msgs ros-kinetic-octomap-ros
+	sudo apt install ros-kinetic-geodesy-ros
+	sudo apt install ros-kinetic-control-toolbox ros-kinetic-transmission-interface ros-kinetic-joint-limits-interface
 fi
 echo
 
@@ -27,10 +33,6 @@ if [[ $doit == "Y" || $doit == "y" ]]; then
      sudo pip install future mavproxy pymavlink
      sudo apt-get install libxml2-dev libxslt1-dev -y
      sudo pip install MAVProxy==1.5.2
-
-	sudo apt install ros-kinetic-mavros ros-kinetic-mavros-msgs ros-kinetic-mav-msgs ros-kinetic-mavlink
-	sudo apt install ros-kinetic-octomap-msgs ros-kinetic-octomap-ros
-	sudo apt install ros-kinetic-geodesy-ros
 fi
 echo
 
