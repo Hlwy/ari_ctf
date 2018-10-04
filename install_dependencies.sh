@@ -27,6 +27,7 @@ read -n1 -p "Do you need to install the Erle-Copter Dependencies? Enter (y) or (
 echo
 if [[ $doit == "Y" || $doit == "y" ]]; then
      sudo apt-get install gawk make git curl cmake -y
+	sudo apt-get install libgoogle-glog-dev -y
      sudo apt-get install python-pip python-serial python-pyparsing ccache realpath python-rosinstall unzip
 
      # Install MavLink MAVProxy
