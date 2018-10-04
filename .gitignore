@@ -1,0 +1,7 @@
+rotors_simulator
+ardupilot
+ardupilot_sitl_gazebo_plugin
+catkin_simple
+glog_catkin
+mav_comm
+mavros
